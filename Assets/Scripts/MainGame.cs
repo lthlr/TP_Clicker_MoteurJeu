@@ -8,14 +8,25 @@ using UnityEngine;
 public class MainGame : MonoBehaviour
 {
     public List<MonsterInfos> Monsters;
+    public List<Upgrade> Upgrades;
     int _currentMonster = 0;
     public Monster monster;
     public GameObject PrefabHitPoint;
+    public GameObject PrefabUpgradeUI;
+    public GameObject ParentUpgrades;
 
     private void Start()
     {
         monster.SetMonster(Monsters[_currentMonster]);
+        foreach (var upgrade in Upgrades)
+        {
+            GameObject go = GameObject.Instantiate(PrefabUpgradeUI, ParentUpgrades.transform, false);
+            go.transform.localPosition = Vector3.zero;
+            go.GetComponent<UpgradeUI>().Initialize(upgrade);
+        }
     }
+
+    
 
     void Update()
     {
