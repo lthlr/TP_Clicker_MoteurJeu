@@ -30,10 +30,13 @@ public class Monster : MonoBehaviour
 
     public void SetMonster(MonsterInfos infos)
     {
-        _lifeMax = infos.Life;
-        _life = _lifeMax;
+        if (infos != null)
+        {
+            _lifeMax = infos.Life;
+            _life = _lifeMax;
 
-        Visual.GetComponent<SpriteRenderer>().sprite = infos.Sprite;
+            Visual.GetComponent<SpriteRenderer>().sprite = infos.Sprite;
+        }
     }
     public void Hit(int damage)
     {

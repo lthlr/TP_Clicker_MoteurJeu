@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00034870996, y: -0.000019073486}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.000020223786}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &138217654
@@ -223,8 +223,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1502995431}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9997987
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1197,31 +1197,31 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 5896f65aef3b5dc45bd53ba0114d5b0b, type: 3}
   - Name: George
     Life: 25
-    Sprite: {fileID: 21300000, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
+    Sprite: {fileID: -755508797, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
   - Name: Jule
     Life: 60
-    Sprite: {fileID: 21300000, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
+    Sprite: {fileID: 1037323140, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
   - Name: Dav
     Life: 100
-    Sprite: {fileID: 21300000, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
+    Sprite: {fileID: -438319949, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
   - Name: Lock
     Life: 125
-    Sprite: {fileID: 21300000, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
+    Sprite: {fileID: 2074238829, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
   - Name: Caja
     Life: 150
-    Sprite: {fileID: 21300000, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
+    Sprite: {fileID: -807410050, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
   - Name: Ole
     Life: 175
-    Sprite: {fileID: 21300000, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
+    Sprite: {fileID: -1889542943, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
   - Name: Mona
     Life: 200
-    Sprite: {fileID: 21300000, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
+    Sprite: {fileID: -875593117, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
   - Name: Peri
     Life: 225
-    Sprite: {fileID: 21300000, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
+    Sprite: {fileID: -953017677, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
   - Name: Hal
     Life: 300
-    Sprite: {fileID: 21300000, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
+    Sprite: {fileID: 1133124323, guid: 59c32e4be5223c948ae94248cd378fc3, type: 3}
   Upgrades:
   - Name: Roseline
     Description: Adds1 dps
@@ -1242,6 +1242,7 @@ MonoBehaviour:
   PrefabHitPoint: {fileID: 8419325182574581978, guid: 82f2e7902810eae4098e04f9616a521b, type: 3}
   PrefabUpgradeUI: {fileID: 5647303028047147640, guid: aa0c4cd20fce4604ba97e7b170c1d206, type: 3}
   ParentUpgrades: {fileID: 21693470}
+  Canvas: {fileID: 983622581}
 --- !u!4 &1008334520
 Transform:
   m_ObjectHideFlags: 0
@@ -1375,7 +1376,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 920339839}
   m_HandleRect: {fileID: 920339838}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

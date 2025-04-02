@@ -14,6 +14,7 @@ public class MainGame : MonoBehaviour
     public GameObject PrefabHitPoint;
     public GameObject PrefabUpgradeUI;
     public GameObject ParentUpgrades;
+    public Canvas Canvas;
 
     private void Start()
     {
@@ -40,11 +41,12 @@ public class MainGame : MonoBehaviour
                 Monster monster = hit.collider.GetComponent<Monster>();
                 monster.Hit(1);
 
-                GameObject go = GameObject.Instantiate(PrefabHitPoint, monster.canvas.transform, false);
-                go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 5;
-                go.transform.DOLocalMoveY(150, 0.8f);
-                go.GetComponent<TMP_Text>().DOFade(0, 0.8f);
-                GameObject.Destroy(go, 0.8f);
+                SpawnFeedback();
+                //GameObject go = GameObject.Instantiate(PrefabHitPoint, monster.canvas.transform, false);
+                //go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 5;
+                //go.transform.DOLocalMoveY(150, 0.8f);
+                //go.GetComponent<TMP_Text>().DOFade(0, 0.8f);
+                //GameObject.Destroy(go, 0.8f);
                 
 
             }
@@ -58,7 +60,17 @@ public class MainGame : MonoBehaviour
 
     private void NextMonster()
     {
-        _currentMonster++;
+        _currentMonster = (_currentMonster + 1) % Monsters.Count;
         monster.SetMonster(Monsters[_currentMonster]);
+    }
+
+    private void SpawnFeedback()
+    {
+        GameObject feedback = Instantiate(PrefabHitPoint, Canvas.transform, false);
+        feedback.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        feedback.transform.position = new Vector3(feedback.transform.position.x, feedback.transform.position.y, 0);
+        feedback.transform.DOLocalMoveY(150, 0.8f);
+        feedback.GetComponent<TMP_Text>().DOFade(0, 0.8f);
+        Destroy(feedback, 0.8f);
     }
 }
