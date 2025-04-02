@@ -8,16 +8,29 @@ using UnityEngine;
 public class MainGame : MonoBehaviour
 {
     public List<MonsterInfos> Monsters;
-    public List<Upgrade> Upgrades;
     int _currentMonster = 0;
     public Monster monster;
     public GameObject PrefabHitPoint;
     public GameObject PrefabUpgradeUI;
     public GameObject ParentUpgrades;
     public Canvas Canvas;
+    public List<Upgrade> Upgrades;
 
     private void Start()
     {
+        if (Monsters.Count > 0) Monster.UpdateMonster(Monsters[_currentMonster]);
+        if(Upgrades.Count>0 && PrefabUpgradeUI != null && ParentUpgrades != null)
+        {
+            foreach (var upgrade in Upgrades)
+            {
+                GameObject go = GameObject.Instantiate(PrefabUpgradeUI, ParentUpgrades.transform);
+                UpgradeUI upgradeUI = upgradeInstance.GetComponent<UpgradeUI>();
+                upgrade.Icon.sprite = upgrade.Icon;
+                upgradeUI.CostText.text = $"{upgrade.Cost}$";
+                upgradeUI.DescriptionText.text = $"{upgrade.Name}\"
+            }
+
+        }
         monster.SetMonster(Monsters[_currentMonster]);
         foreach (var upgrade in Upgrades)
         {
